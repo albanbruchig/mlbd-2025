@@ -1,16 +1,19 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+import pandas as pd
+import numpy as np
 
 def person_a():
     """Reads the data in data/school_performance.csv
     and returns a dataframe with the first 5,000 rows.
+
     Returns:
     dataframe: containing first 5,000 rows of school_performace.csv
     """
     # Code goes over here.
-    
-    
-    raise NotImplementedError()
+    df = pd.read_csv("../../data/school_performance.csv")
+    return df.head(5000)
+
 
 def person_b(df):
     """Keeps only the data from the female students. 
@@ -24,7 +27,7 @@ def person_b(df):
     """
     # Code goes over here.
 
-    raise NotImplementedError()
+    return df[df["gender"] == "female"]
 
 def person_c(df):
     """Calculates the mean from the column "grade"
@@ -35,9 +38,10 @@ def person_c(df):
     Returns:
     float: Mean grade
     """
-    # Code goes over here.
+    grades = df["grade"]
+    return np.mean(grades)
 
-    raise NotImplementedError()
+    
 
 def main():
     """ Main program """
